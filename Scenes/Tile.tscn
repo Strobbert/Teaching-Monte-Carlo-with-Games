@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1m48f0juh25c"]
+
+[ext_resource type="Script" path="res://Scripts/Tile.gd" id="1_125or"]
+[ext_resource type="Texture2D" uid="uid://6ijibrgl7uxr" path="res://Art/Arrows/Up.png" id="2_dua56"]
+[ext_resource type="Texture2D" uid="uid://dfjclwo5fmrf1" path="res://Art/Arrows/Right.png" id="3_d1urk"]
+[ext_resource type="Texture2D" uid="uid://d3xlvi13evls0" path="res://Art/Arrows/Down.png" id="4_run45"]
+[ext_resource type="Texture2D" uid="uid://4sjs6g5itc4n" path="res://Art/Arrows/Left.png" id="5_q7t24"]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1_125or")
+
+[node name="Up" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_dua56")
+
+[node name="Right" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_d1urk")
+
+[node name="Down" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_run45")
+
+[node name="Left" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_q7t24")

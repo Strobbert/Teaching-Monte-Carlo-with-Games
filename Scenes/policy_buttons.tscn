@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bmxljcjm1lpnn"]
+
+[node name="PolicyButtons" type="CanvasLayer"]
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CreatPolicy" type="HBoxContainer" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -20.0
+offset_right = 130.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Up" type="Button" parent="Buttons/CreatPolicy"]
+layout_mode = 2
+text = "    Up    "
+
+[node name="Right" type="Button" parent="Buttons/CreatPolicy"]
+layout_mode = 2
+text = "   Right   "
+
+[node name="Down" type="Button" parent="Buttons/CreatPolicy"]
+layout_mode = 2
+text = "   Down   "
+
+[node name="Left" type="Button" parent="Buttons/CreatPolicy"]
+layout_mode = 2
+text = "   Left   "
+
+[node name="PolicyBoxes" type="HBoxContainer" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -20.0
+offset_right = 109.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SP" type="Button" parent="Buttons/PolicyBoxes"]
+layout_mode = 2
+text = " Set policy "
+
+[node name="CP" type="Button" parent="Buttons/PolicyBoxes"]
+layout_mode = 2
+text = " Clear policy"
+
+[node name="MC" type="Button" parent="Buttons/PolicyBoxes"]
+layout_mode = 2
+text = " Monte Carlo"
+
+[node name="PI" type="Button" parent="Buttons/PolicyBoxes"]
+layout_mode = 2
+text = " Policy iter"

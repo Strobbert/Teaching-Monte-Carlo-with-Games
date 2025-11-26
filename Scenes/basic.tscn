@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=4 uid="uid://cbgyaex2pkp7a"]
+
+[ext_resource type="Script" path="res://Scripts/Normal.gd" id="1_v6ji1"]
+[ext_resource type="Texture2D" uid="uid://b8hjlf4u8q0so" path="res://Art/Updated art/Tile.png" id="2_280na"]
+[ext_resource type="Texture2D" uid="uid://q0ksh41ti6wi" path="res://Art/Updated art/New_States.png" id="3_857x1"]
+[ext_resource type="Texture2D" uid="uid://cpu6fn5bk0rl0" path="res://Art/current.png" id="4_vbtvw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xmhxs"]
+texture = ExtResource("2_280na")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ht8mk"]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_xmhxs")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kgl68"]
+texture = ExtResource("3_857x1")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8v85f"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_kgl68")
+
+[node name="Basic" type="Node2D"]
+script = ExtResource("1_v6ji1")
+time_out = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Grid" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_ht8mk")
+
+[node name="States" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_8v85f")
+
+[node name="Current" type="Sprite2D" parent="."]
+position = Vector2(-32, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("4_vbtvw")
+
+[node name="Tiles" type="Node" parent="."]
