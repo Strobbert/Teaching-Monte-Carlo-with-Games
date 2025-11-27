@@ -301,10 +301,13 @@ func play_episode(episode: Array[Array]) -> void:
 func start_OTP() -> void:
     currentUI = overPolicyTestUI.instantiate()
     add_child(currentUI)
-    $GameOver/PanelContainer/VBoxContainer/Button.pressed.connect(queue_free)
+    $GameOver/PanelContainer/VBoxContainer/Button.pressed.connect(end_game)
     $GameOver/PanelContainer/VBoxContainer/Button2.pressed.connect(play)
     $GameOver/PanelContainer/VBoxContainer/Button3.pressed.connect(policy_button)
     $GameOver/PanelContainer/VBoxContainer/High.text = "Tries left: " + str(tries)
     $GameOver/PanelContainer/VBoxContainer/Score.text = str(score)
+
+func end_game() -> void:
+    get_tree().quit()
 
 #endregion
